@@ -45,6 +45,11 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
 
             .cloud-svg:hover {
                 transform: scale(1.05);
+                filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.2));
+             }
+             
+             .cloud-svg:hover .cloud-path {
+                fill: #B0E0FF; /* Lighter blue on hover */
              }
 
              .cloud-text {
@@ -60,18 +65,29 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
         <div>TODO write content</div>
         <div>Create UI Stuff!<div>
                 <button class="cloud-button">
-                    <svg class="cloud-svg" viewBox="0 0 200 100">
-                        <path d="M60,80 
-                            C40,90 30,70 50,60 
-                            C40,50 30,40 50,30 
-                            C60,10 90,10 100,30 
-                            C120,20 140,30 130,50 
-                            C150,70 120,80 100,80 Z"
-                          fill="#87CEFA" stroke="#4682B4" stroke-width="2" />
-                        <text x="100" y="55" class="cloud-text" text-anchor="middle" dominant-baseline="middle">
-                            Click Me
+                    <svg class="cloud-svg" viewBox="0 0 220 100" xmlns="http://www.w3.org/2000/svg" onclick="handleCloudClick()">
+                        <path class="cloud-path"
+                            d="
+                            M60,60
+                            C55,40 75,30 90,40
+                            C95,20 125,20 130,40
+                            C145,30 165,40 160,60
+                            C180,65 180,85 150,85
+                            H70
+                            C40,85 40,65 60,60
+                            Z" 
+                            fill="#87CEFA" stroke="#4682B4" stroke-width="2" />
+                        <text x="110" y="68" class="cloud-text" text-anchor="middle" dominant-baseline="middle">
+                             Click Me
                         </text>
                     </svg>
+                    <script>
+                        function handleCloudClick() {
+                         alert("You clicked the cloud!");
+                           //Later:
+                           // - redirect: window.location.href = 'https://example.com';
+                        }
+</script>
 
                 </button>
     </body>
